@@ -1,0 +1,16 @@
+def contain_sublist(list1,list2):
+    buldu = 0
+    tempj = -1
+    for i in range(len(list2)):
+        for j in range(tempj + 1, len(list1)):  # diziye kaldığı yerden aramaya devam etmesi için tempj kullandık
+            if list2[i] == list1[j]:        #eger eşit bir deger bulursa
+                buldu = buldu + 1           #bulduyu 1 arttir
+                tempj = j                   #dizinin kaldıgı yeri tut
+                break;
+    if buldu == len(list2):                 #eger buldu dizinin  boyutuna esit olursa true
+        return True
+    else:
+        return False
+
+donen=contain_sublist(['a',4,6,2,8,6],['a',4,6,6])
+print(donen)
